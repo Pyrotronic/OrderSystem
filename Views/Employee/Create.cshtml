@@ -1,0 +1,22 @@
+﻿@model OrderSystem.Models.Employees
+
+<h2>Добавление сотрудника</h2>
+<form asp-action="create" asp-controller="employee">
+
+    <p>
+        <label asp-for="Surname">Фамилия</label><br />
+        <input type="text" asp-for="Surname" />
+    </p>
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Position">Должность</label><br />
+        <input type="text" asp-for="Position" />
+    </p>
+            <p>
+                <input type="submit" value="Отправить" />
+            </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

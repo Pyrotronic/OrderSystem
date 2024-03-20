@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OrderSystem.Models.Employees>
+
+
+<h2>Список сотрудников</h2>
+
+<tr>
+    <th>
+        <a asp-action="Create">
+            <button type="submit" class=" btn btn-primary">Добавить пользователя</button>
+        </a>
+    </th>
+    <th>
+        <a asp-action="Delete">
+            <button type="submit" class=" btn btn-primary">Удалить пользователя</button>
+        </a>
+    </th>
+</tr>
+<table class="table">
+    <tr>
+        <th>
+            <a asp-action="Index" asp-route-sortState="@ViewBag.Id_employeeSort">
+                Id
+            </a>
+        </th>
+        <th>
+            <a asp-action="Index" asp-route-sortState="@ViewBag.SurnameSort">
+                Фамилия
+            </a>
+        </th>
+        <th>
+            <a asp-action="Index" asp-route-sortState="@ViewBag.NameSort">
+                Имя
+            </a>
+        </th>
+        <th>
+            Должность
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id_employee</td>
+            <td>@item.Surname</td>
+            <td>@item.Name</td>
+            <td>@item.Position</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Employee" asp-route-id="@item.Id_employee">
+                    <button type="submit" class="btn btn-outline-primary">Изменить</button>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

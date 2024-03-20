@@ -1,0 +1,17 @@
+﻿@model IEnumerable<OrderSystem.Models.Employees>
+<h2>Удаление сотрудника</h2>
+<form asp-action="Delete" asp-controller="Employee" method="post">
+    <select name="Id_employee">
+        @foreach (var item in Model)
+        {
+            <option value="@item.Id_employee">@item.Surname</option>
+        }
+    </select>
+    <p>
+        <input type="submit" value="Удалить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>
+
+
+

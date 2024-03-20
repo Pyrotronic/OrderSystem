@@ -1,0 +1,35 @@
+﻿@model OrderSystem.Models.Client
+
+<h2>Редактирование пользователя</h2>
+<form asp-action="edit" asp-controller="client" >
+    <input type="hidden" asp-for="id_Client"/>
+
+    <p>
+        <label asp-for="Surname">Фамилия</label><br />
+        <input type="text" asp-for="Surname" />
+    </p>
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="phone">Телефон</label><br />
+        <input type="text" asp-for="phone" />
+    </p>
+    <p>
+        <label asp-for="Address">Адрес</label><br />
+        <input type="text" asp-for="Address" />
+    </p>
+    <p>
+        <label asp-for="bank">Банк</label><br />
+        <input type="text" asp-for="bank" />
+    </p>
+    <p>
+        <label asp-for="card_number">Номер карты</label><br />
+        <input type="number" asp-for="card_number" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

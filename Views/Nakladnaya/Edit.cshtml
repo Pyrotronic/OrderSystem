@@ -1,0 +1,23 @@
+﻿@model OrderSystem.Models.Nakladnaya
+
+<h2>Редактирование накладной</h2>
+<form asp-action="edit" asp-controller="nakladnaya">
+    <input type="hidden" asp-for="Id_nakladnaya" />
+
+    <p>
+        <label asp-for="Id_Order">Категория</label><br />
+        <select asp-for="Id_Order" asp-items="@(new SelectList(ViewBag.Order, "Id_Order", "Id_Order"))"></select>
+    </p>
+    <p>
+        <label asp-for="Id_product">Категория</label><br />
+        <select asp-for="Id_product" asp-items="@(new SelectList(ViewBag.Product, "Id_product", "Nazvanie"))"></select>
+    </p>
+    <p>
+        <label asp-for="Amount">Телефон</label><br />
+        <input type="number" asp-for="Amount" min="0" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

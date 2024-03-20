@@ -1,0 +1,23 @@
+﻿@model OrderSystem.Models.Order
+
+<h2>Добавление заказа</h2>
+<form asp-action="create" asp-controller="order">
+
+    <p>
+        <label asp-for="Id_Client">Id клиента</label><br />
+        <select asp-for="Id_Client" asp-items="@(new SelectList(ViewBag.Client, "id_Client", "Surname"))"></select>
+
+    </p>
+    <p>
+        <label asp-for="Id_employee">Id сотрудника</label><br />
+        <select asp-for="Id_employee" asp-items="@(new SelectList(ViewBag.Employee, "Id_employee", "Surname"))"></select>
+    </p>
+    <p>
+        <label asp-for="Date_order">Дата</label><br />
+        <input type="datetime-local" asp-for="Date_order" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

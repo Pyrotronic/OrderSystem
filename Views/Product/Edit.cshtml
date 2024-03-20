@@ -1,0 +1,27 @@
+﻿@model OrderSystem.Models.Product
+
+<h2>Редактирование товара</h2>
+<form asp-action="edit" asp-controller="product">
+    <input type="hidden" asp-for="Id_product" />
+
+    <p>
+        <label asp-for="Nazvanie">Название</label><br />
+        <input type="text" asp-for="Nazvanie" />
+    </p>
+    <p>
+        <label asp-for="Id_PC">Категория</label><br />
+        <select asp-for="Id_PC" asp-items="@(new SelectList(ViewBag.Product_category, "Id_PC", "Nazvanie"))"></select>
+    </p>
+    <p>
+        <label asp-for="Price">Цена</label><br />
+        <input type="text" asp-for="Price" />
+    </p>
+    <p>
+        <label asp-for="Description">Описание</label><br />
+        <input type="text" asp-for="Description" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

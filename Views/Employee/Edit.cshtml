@@ -1,0 +1,23 @@
+﻿@model OrderSystem.Models.Employees
+
+<h2>Редактирование сотрудника</h2>
+<form asp-action="edit" asp-controller="employee">
+    <input type="hidden" asp-for="Id_employee" />
+
+    <p>
+        <label asp-for="Surname">Фамилия</label><br />
+        <input type="text" asp-for="Surname" />
+    </p>
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Position">Телефон</label><br />
+        <input type="text" asp-for="Position" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

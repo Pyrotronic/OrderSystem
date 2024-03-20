@@ -1,0 +1,14 @@
+﻿@model OrderSystem.Models.Product_category
+
+<h2>Добавление категории</h2>
+<form asp-action="create" asp-controller="Product_category">
+
+    <p>
+        <label asp-for="Nazvanie">Название</label><br />
+        <input type="text" asp-for="Nazvanie" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+    <a href="javascript:history.back()" class="btn btn-secondary">Назад</a>
+</form>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OrderSystem.Models.Order>
+
+
+<h2>Список заказов</h2>
+
+<tr>
+    <th>
+        <a asp-action="Create">
+            <button type="submit" class=" btn btn-primary">Добавить пользователя</button>
+        </a>
+    </th>
+    <th>
+        <a asp-action="Delete">
+            <button type="submit" class=" btn btn-primary">Удалить пользователя</button>
+        </a>
+    </th>
+
+</tr>
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Клиент
+        </th>
+        <th>
+            Сотрудник
+        </th>
+        <th>
+            Дата
+        </th>
+        <th>
+            Детали
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id_Order</td>
+            <td>@item.client.Surname</td>
+            <td>@item.employee.Surname</td>
+            <td>@item.Date_order</td>
+            <td>
+                <a asp-action="Details" asp-controller="Order" asp-route-id="@item.Id_Order">
+                    <button type="submit" class="btn btn-outline-primary">Детали</button>
+                </a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id_Order">
+                    <button type="submit" class="btn btn-outline-primary">Изменить</button>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

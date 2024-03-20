@@ -1,0 +1,24 @@
+﻿@model List<OrderSystem.Models.Nakladnaya>
+
+<h2>Детали заказа</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название товара</th>
+            <th>Количество</th>
+            <th>Сумма</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.product.Nazvanie</td>
+                <td>@item.Amount</td>
+                <td>@item.Summa</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="javascript:history.back()" class="btn btn-secondary">Назад</a>

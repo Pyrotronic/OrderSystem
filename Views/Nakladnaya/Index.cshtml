@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OrderSystem.Models.Nakladnaya>
+
+
+<h2>Список накладных</h2>
+
+<tr>
+    <th>
+        <a asp-action="Create">
+            <button type="submit" class=" btn btn-primary">Добавить накладную</button>
+        </a>
+    </th>
+    <th>
+        <a asp-action="Delete">
+            <button type="submit" class=" btn btn-primary">Удалить накладную</button>
+        </a>
+    </th>
+
+</tr>
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Id Заказа
+        </th>
+        <th>
+            Id Товара
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Сумма
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id_nakladnaya</td>
+            <td>@item.Id_Order</td>
+            <td>@item.product.Nazvanie</td>
+            <td>@item.Amount</td>
+            <td>@item.Summa</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Nakladnaya" asp-route-id="@item.Id_nakladnaya">
+                    <button type="submit" class="btn btn-outline-primary">Изменить</button>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
